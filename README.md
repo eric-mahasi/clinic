@@ -58,4 +58,4 @@ exemplary efforts of the following amazing developers:
 * Javan [Ekhalie](https://github.com/JavanEkhalie)
 
 A full list of contributors can be found in the
-[Contributors.md]((https://github.com/eric-mahasi/clinic/blob/master/Contributors.md)
+[Contributors.md](https://github.com/eric-mahasi/clinic/blob/master/Contributors.md)
