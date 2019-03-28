@@ -27,6 +27,7 @@ void clinic::main_menu(){
        << "2-----Receptionist\n"
        << "3-----Quit\n";
   cin >> choice;
+  system("cls");
 }
 
 void clinic:: doctor_menu(){
@@ -35,6 +36,7 @@ void clinic:: doctor_menu(){
        << "3-----Quit\n";
 
   cin >> doctor_choice;
+  system("cls");
   switch(doctor_choice){
     case 1:
       clinic::view_apps();
@@ -57,6 +59,7 @@ void clinic::reception_menu() {
        << "6-----Quit\n";
 
   cin >> reception_choice;
+  system("cls");
   switch(reception_choice) {
     case 1:
       // edit_file();
@@ -159,7 +162,7 @@ int main(){
 
   while(true){
     uzima.main_menu();
-    // system("cls");
+    system("cls");
     switch(uzima.choice){
       case 1:
         uzima.doctor_menu();
