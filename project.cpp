@@ -154,7 +154,7 @@ void clinic::view_apps(){
   ifstream read("appointments.xls");
   cout << "First Name" << "\t" << "Last Name" << "\t" << "Gender" << "\t" << "Age" << "\t" << "ID Number" << "\t" << "Insurance" << "\t" << "Appointment Date" << endl;
   while (read >> first_name >> last_name >> gender >> age >> id_number >> insurance >> app_time){
-    cout << first_name << "\t" << last_name << "\t" << gender << "\t" << age << "\t" << id_number << "\t" << insurance;
+    cout << first_name << "\t" << last_name << "\t" << gender << "\t" << age << "\t" << id_number << "\t" << insurance << "\t" << app_time;
   }
   read.close();
 }
