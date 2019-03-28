@@ -14,7 +14,7 @@ public:
   void main_menu();
   void doctor_menu();
   void reception_menu();
-  void input();
+  void write_to_file();
   void display_records();
   void get_report();
   void output();
@@ -65,7 +65,7 @@ void clinic::reception_menu() {
       // edit_file();
       break;
     case 2:
-      clinic::input();
+      clinic::write_to_file();
       break;
     case 3:
       clinic::get_report();
@@ -83,7 +83,7 @@ void clinic::reception_menu() {
   }
 }
 
-void clinic::input(){
+void clinic::write_to_file(){
   // Takes input from the keyboard and stores it to the file
   // TODO: Consider renaming to write_to_file
   int number;
