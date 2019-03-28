@@ -85,7 +85,6 @@ void clinic::reception_menu() {
 
 void clinic::write_to_file(){
   // Takes input from the keyboard and stores it to the file
-  // TODO: Consider renaming to write_to_file
   int number;
   ofstream write("hospital records.xls", ios::app);
   cout << "How many records would you like to add? ";
@@ -93,25 +92,25 @@ void clinic::write_to_file(){
 
  for(int n = 0;n < number;n ++){
 
-  cout << "Enter First Name:";
+  cout << "Enter First Name: ";
 	cin >> first_name;
 
-	cout << "Enter Last Name:";
+	cout << "Enter Last Name: ";
 	cin >> last_name;
 
-	cout << "Enter Gender In Full(Male Or Female):";
+	cout << "Enter Gender In Full(Male Or Female): ";
 	cin >> gender;
 
-	cout << "Enter Age:";
+	cout << "Enter Age: ";
 	cin >> age;
 
-	cout << "Enter ID Number:";
+	cout << "Enter ID Number: ";
 	cin >> id_number;
 
-	cout << "Enter Insurance Company:";
+	cout << "Enter Insurance Company: ";
 	cin >> insurance;
 
-  cout << "Enter Status:";
+  cout << "Enter Status: ";
   cin >> status;
 
   system("cls");
