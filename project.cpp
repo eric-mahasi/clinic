@@ -15,7 +15,7 @@ public:
   void doctor_menu();
   void reception_menu();
   void input();
-  void display();
+  void display_records();
   void get_report();
   void output();
   void view_apps();
@@ -71,7 +71,7 @@ void clinic::reception_menu() {
       clinic::get_report();
       break;
     case 4:
-      clinic::display();
+      clinic::display_records();
       break;
     case 5:
       clinic::main_menu();
@@ -120,7 +120,7 @@ void clinic::input(){
   write.close();
 }
 
-void clinic::display(){
+void clinic::display_records(){
   // Displays all the user records stored in the file
 	ifstream view("hospital records.xls");
 
