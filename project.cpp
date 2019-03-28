@@ -139,8 +139,10 @@ void clinic::get_report(){
     if(status == "routine"){
       app_time = "Today";
       output << first_name << "\t" << last_name << "\t" << gender << "\t" << age << "\t" << id_number << "\t" << insurance << "\t" << app_time << endl;
-    }else{
+    }else if(status == "urgent"){
       app_time = "Tomorrow";
+    }else{
+      cout << "Please confirm status";
     }
   }
   output.close();
