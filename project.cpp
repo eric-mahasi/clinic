@@ -110,7 +110,7 @@ void clinic::write_to_file(){
 	cout << "Enter Insurance Company: ";
 	cin >> insurance;
 
-  cout << "Enter Status: ";
+  cout << "Enter Status(Routine/Urgent): ";
   cin >> status;
 
   system("cls");
@@ -137,10 +137,10 @@ void clinic::get_report(){
   ofstream output("appointments.xls", ios::app);
 
   while(read >> first_name >> last_name >> gender >> age >> id_number >> insurance >> status){
-    if(status == "routine"){
+    if(status == "Routine"){
       app_time = "Today";
       output << first_name << "\t" << last_name << "\t" << gender << "\t" << age << "\t" << id_number << "\t" << insurance << "\t" << app_time << endl;
-    }else if(status == "urgent"){
+    }else if(status == "Urgent"){
       app_time = "Tomorrow";
     }else{
       cout << "Please confirm status";
