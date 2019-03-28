@@ -86,7 +86,7 @@ void clinic::reception_menu() {
 void clinic::write_to_file(){
   // Takes input from the keyboard and stores it to the file
   int number;
-  ofstream write("hospital records.xls", ios::app);
+  ofstream write("clinic records.xls", ios::app);
   cout << "How many records would you like to add? ";
   cin >> number;
 
@@ -121,7 +121,7 @@ void clinic::write_to_file(){
 
 void clinic::display_records(){
   // Displays all the user records stored in the file
-	ifstream view("hospital records.xls");
+	ifstream view("clinic records.xls");
 
   while(view >> first_name >> last_name >> gender >> age >> id_number >> insurance){
     cout << first_name << "\t" << last_name << "\t" << gender << "\t" << age << "\t" << id_number << "\t" << insurance;
@@ -132,7 +132,7 @@ void clinic::display_records(){
 
 void clinic::get_report(){
   // Determines when a patient's appointment is due
-  ifstream read("hospital records.xls");
+  ifstream read("clinic records.xls");
   ofstream output("appointments.xls", ios::app);
 
   while(read >> first_name >> last_name >> gender >> age >> id_number >> insurance >> status){
