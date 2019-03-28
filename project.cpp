@@ -98,7 +98,7 @@ void clinic::write_to_file(){
 	cout << "Enter Last Name: ";
 	cin >> last_name;
 
-	cout << "Enter Gender In Full(Male Or Female): ";
+	cout << "Enter Gender(M/F): ";
 	cin >> gender;
 
 	cout << "Enter Age: ";
