@@ -18,7 +18,6 @@ public:
   void write_to_file();
   void display_records();
   void get_report();
-  void output();
   void view_apps();
 };
 
