@@ -153,9 +153,9 @@ void clinic::get_report(){
 
 void clinic::view_apps(){
   ifstream read("appointments.xls");
-  cout << "First Name" << "\t" << "Last Name" << "\t" << "Gender" << "\t" << "Age" << "\t" << "ID Number" << "\t" << "Insurance" << "\t" << "Appointment Date" << endl;
+  cout << "First Name" << "\t" << "Last Name" << "\t\t" << "Gender" << "\t\t" << "Age" << "\t\t" << "ID Number" << "\t\t" << "Insurance" << "\t\t" << "Appointment Date" << endl;
   while (read >> first_name >> last_name >> gender >> age >> id_number >> insurance >> app_time){
-    cout << first_name << "\t" << last_name << "\t" << gender << "\t" << age << "\t" << id_number << "\t" << insurance << "\t" << app_time;
+    cout << first_name << "\t\t" << last_name << "\t\t\t" << gender << "\t\t" << age << "\t\t" << id_number << "\t\t\t" << insurance << "\t\t\t" << app_time << endl;
   }
   read.close();
 }
