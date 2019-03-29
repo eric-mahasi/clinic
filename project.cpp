@@ -9,8 +9,8 @@ private:
   // Used to determine which option is chosen from a list of menu items.
   int doctor_choice, reception_choice;
 	string first_name, last_name, gender, age, id_number, insurance, status,
-  app_time;
-  // app_time is short for appointment time
+  app_date;
+  // app_time is short for appointment date
 
 public:
   int choice;
@@ -150,11 +150,11 @@ void clinic::get_report(){
 
   while(ifile >> first_name >> last_name >> gender >> age >> id_number >> insurance >> status){
     if(status == "Urgent"){
-      app_time = "Today";
+      app_date = "Today";
       ofile << first_name << "\t" << last_name << "\t" << gender << "\t" << age
-       << "\t" << id_number << "\t" << insurance << "\t" << app_time << endl;
+       << "\t" << id_number << "\t" << insurance << "\t" << app_date << endl;
     }else if(status == "Routine"){
-      app_time = "Tomorrow";
+      app_date = "Tomorrow";
     }else{
       cout << "Please confirm status";
     }
@@ -170,9 +170,9 @@ void clinic::view_apps(){
   "\t\tInsurance \t\tAppointment Date\n";
 
   cout << title;
-  while (ifile >> first_name >> last_name >> gender >> age >> id_number >> insurance >> app_time){
+  while (ifile >> first_name >> last_name >> gender >> age >> id_number >> insurance >> app_date){
     cout << first_name << "\t\t" << last_name << "\t\t\t" << gender << "\t\t" <<
-     age << "\t\t" << id_number << "\t\t\t" << insurance << "\t\t\t" << app_time
+     age << "\t\t" << id_number << "\t\t\t" << insurance << "\t\t\t" << app_date
       << endl;
   }
   ifile.close();
