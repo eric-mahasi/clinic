@@ -10,7 +10,7 @@ private:
   int doctor_choice, reception_choice;
 	string first_name, last_name, gender, age, id_number, insurance, status,
   app_time;
-  // app_time is shott for appointment time
+  // app_time is short for appointment time
 
 public:
   int choice;
