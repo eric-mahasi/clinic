@@ -96,12 +96,15 @@ void clinic::write_to_file(){
 
    cout << "Enter First Name: ";
    cin >> first_name;
+   first_name[0] = toupper(first_name[0]);
 
    cout << "Enter Last Name: ";
    cin >> last_name;
+   last_name[0] = toupper(last_name[0]);
 
    cout << "Enter Gender(M/F): ";
    cin >> gender;
+   gender[0] = toupper(gender[0]);
 
    cout << "Enter Age: ";
    cin >> age;
@@ -111,9 +114,11 @@ void clinic::write_to_file(){
 
    cout << "Enter Insurance Company: ";
    cin >> insurance;
+   insurance[0] = toupper(insurance[0]);
 
    cout << "Enter Status(Routine/Urgent): ";
    cin >> status;
+   status[0] = toupper(status[0]);
 
    system("cls");
    ofile << first_name << "\t" << last_name << "\t" << gender << "\t" << age <<
