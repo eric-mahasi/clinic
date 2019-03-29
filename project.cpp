@@ -149,11 +149,11 @@ void clinic::get_report(){
   ofstream ofile("appointments.xls", ios::app);
 
   while(ifile >> first_name >> last_name >> gender >> age >> id_number >> insurance >> status){
-    if(status == "Routine"){
+    if(status == "Urgent"){
       app_time = "Today";
       ofile << first_name << "\t" << last_name << "\t" << gender << "\t" << age
        << "\t" << id_number << "\t" << insurance << "\t" << app_time << endl;
-    }else if(status == "Urgent"){
+    }else if(status == "Routine"){
       app_time = "Tomorrow";
     }else{
       cout << "Please confirm status";
