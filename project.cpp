@@ -6,9 +6,11 @@ using namespace std;
 class clinic{
 
 private:
+  // Used to determine which option is chosen from a list of menu items.
   int doctor_choice, reception_choice;
 	string first_name, last_name, gender, age, id_number, insurance, status,
   app_time;
+  // app_time is shott for appointment time
 
 public:
   int choice;
@@ -84,7 +86,7 @@ void clinic::reception_menu() {
 }
 
 void clinic::write_to_file(){
-  // Takes input from the keyboard and stores it to the file
+  // Stores the patient details to the file.
   int number;
   ofstream ofile("clinic records.xls", ios::app);
   cout << "How many records would you like to add? ";
@@ -121,7 +123,7 @@ void clinic::write_to_file(){
 }
 
 void clinic::display_records(){
-  // Displays all the user records stored in the file
+  // Displays all the patient details stored in the file.
   ifstream ifile("clinic records.xls");
   string title = "First Name\tLast Name \t\tGender \t\tAge  \t\tID Number"
   "\t\tInsurance \t\tStatus \n";
@@ -137,7 +139,7 @@ void clinic::display_records(){
 }
 
 void clinic::get_report(){
-  // Determines when a patient's appointment is due
+  // Determines when a patient's appointment is due depending on their status.
   ifstream ifile("clinic records.xls");
   ofstream ofile("appointments.xls", ios::app);
 
@@ -157,6 +159,7 @@ void clinic::get_report(){
 }
 
 void clinic::view_apps(){
+  // Displays the due appointments.
   ifstream ifile("appointments.xls");
   string title = "First Name\tLast Name \t\tGender \t\tAge  \t\tID Number"
   "\t\tInsurance \t\tAppointment Date\n";
