@@ -88,7 +88,7 @@ void clinic::reception_menu() {
 void clinic::write_to_file(){
   // Takes input from the keyboard and stores it to the file
   int number;
-  ofstream write("clinic records.xls", ios::app);
+  ofstream ofile("clinic records.xls", ios::app);
   cout << "How many records would you like to add? ";
   cin >> number;
 
@@ -116,37 +116,37 @@ void clinic::write_to_file(){
   cin >> status;
 
   system("cls");
-  write << first_name << "\t" << last_name << "\t" << gender << "\t" << age <<
+  ofile << first_name << "\t" << last_name << "\t" << gender << "\t" << age <<
   "\t" << id_number << "\t" << insurance << "\t" << status << endl;
   }
-  write.close();
+  ofile.close();
 }
 
 void clinic::display_records(){
   // Displays all the user records stored in the file
-	ifstream view("clinic records.xls");
+	ifstream ifile("clinic records.xls");
   string title = "First Name\tLast Name \t\tGender \t\tAge  \t\tID Number"
   "\t\tInsurance \t\tStatus \n";
 
   cout << title;
-  while(view >> first_name >> last_name >> gender >> age >> id_number >> insurance >> status){
+  while(ifile >> first_name >> last_name >> gender >> age >> id_number >> insurance >> status){
     cout << first_name << "\t\t" << last_name << "\t\t\t" << gender << "\t\t"
     << age << "\t\t" << id_number << "\t\t\t" << insurance << "\t\t\t" <<
     status;
     cout << endl;
   }
-  view.close();
+  ifile.close();
 }
 
 void clinic::get_report(){
   // Determines when a patient's appointment is due
-  ifstream read("clinic records.xls");
-  ofstream output("appointments.xls", ios::app);
+  ifstream ifile("clinic records.xls");
+  ofstream ofile("appointments.xls", ios::app);
 
-  while(read >> first_name >> last_name >> gender >> age >> id_number >> insurance >> status){
+  while(ifile >> first_name >> last_name >> gender >> age >> id_number >> insurance >> status){
     if(status == "Routine"){
       app_time = "Today";
-      output << first_name << "\t" << last_name << "\t" << gender << "\t" << age
+      ofile << first_name << "\t" << last_name << "\t" << gender << "\t" << age
        << "\t" << id_number << "\t" << insurance << "\t" << app_time << endl;
     }else if(status == "Urgent"){
       app_time = "Tomorrow";
@@ -154,22 +154,22 @@ void clinic::get_report(){
       cout << "Please confirm status";
     }
   }
-  output.close();
-  read.close();
+  ifile.close();
+  ofile.close();
 }
 
 void clinic::view_apps(){
-  ifstream read("appointments.xls");
+  ifstream ifile("appointments.xls");
   string title = "First Name\tLast Name \t\tGender \t\tAge  \t\tID Number"
   "\t\tInsurance \t\tAppointment Date\n";
 
   cout << title;
-  while (read >> first_name >> last_name >> gender >> age >> id_number >> insurance >> app_time){
+  while (ifile >> first_name >> last_name >> gender >> age >> id_number >> insurance >> app_time){
     cout << first_name << "\t\t" << last_name << "\t\t\t" << gender << "\t\t" <<
      age << "\t\t" << id_number << "\t\t\t" << insurance << "\t\t\t" << app_time
       << endl;
   }
-  read.close();
+  ifile.close();
 }
 
 int main(){
