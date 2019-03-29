@@ -94,37 +94,37 @@ void clinic::write_to_file(){
 
  for(int n = 0;n < number;n ++){
 
-  cout << "Enter First Name: ";
-	cin >> first_name;
+   cout << "Enter First Name: ";
+   cin >> first_name;
 
-	cout << "Enter Last Name: ";
-	cin >> last_name;
+   cout << "Enter Last Name: ";
+   cin >> last_name;
 
-	cout << "Enter Gender(M/F): ";
-	cin >> gender;
+   cout << "Enter Gender(M/F): ";
+   cin >> gender;
 
-	cout << "Enter Age: ";
-	cin >> age;
+   cout << "Enter Age: ";
+   cin >> age;
 
-	cout << "Enter ID Number: ";
-	cin >> id_number;
+   cout << "Enter ID Number: ";
+   cin >> id_number;
 
-	cout << "Enter Insurance Company: ";
-	cin >> insurance;
+   cout << "Enter Insurance Company: ";
+   cin >> insurance;
 
-  cout << "Enter Status(Routine/Urgent): ";
-  cin >> status;
+   cout << "Enter Status(Routine/Urgent): ";
+   cin >> status;
 
-  system("cls");
-  ofile << first_name << "\t" << last_name << "\t" << gender << "\t" << age <<
-  "\t" << id_number << "\t" << insurance << "\t" << status << endl;
-  }
-  ofile.close();
+   system("cls");
+   ofile << first_name << "\t" << last_name << "\t" << gender << "\t" << age <<
+   "\t" << id_number << "\t" << insurance << "\t" << status << endl;
+ }
+ ofile.close();
 }
 
 void clinic::display_records(){
   // Displays all the user records stored in the file
-	ifstream ifile("clinic records.xls");
+  ifstream ifile("clinic records.xls");
   string title = "First Name\tLast Name \t\tGender \t\tAge  \t\tID Number"
   "\t\tInsurance \t\tStatus \n";
 
