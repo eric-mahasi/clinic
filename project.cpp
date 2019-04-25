@@ -7,8 +7,8 @@ class clinic{
 
 private:
   // Used to determine which option is chosen from a list of menu items.
-  int doctor_choice, reception_choice;
-	string first_name, last_name, gender, age, id_number, insurance, status,
+  int doctor_choice, reception_choice, id_number;
+	string first_name, last_name, gender, age, insurance, status,
   app_date;
   // app_date is short for appointment date
 
@@ -90,6 +90,18 @@ void clinic::write_to_file(){
   // Stores the patient details to the file.
   int number;
   ofstream ofile("clinic records.xls", ios::app);
+  ifstream ifile("clinic records.xls");
+
+  // Count the number of lines in the file which is the number 
+  // of currently exisitng patient records. New patients are assigned 
+  // ID numbers based on this number.
+  int count = 0;
+  string line;
+  while(getline(ifile, line)){
+    count ++;
+  }
+
+  id_number = count + 1;
 
   cout << "Enter First Name: ";
   cin >> first_name;
@@ -105,9 +117,6 @@ void clinic::write_to_file(){
 
   cout << "Enter Age: ";
   cin >> age;
-
-  cout << "Enter ID Number: ";
-  cin >> id_number;
 
   cout << "Enter Insurance Company: ";
   cin >> insurance;
