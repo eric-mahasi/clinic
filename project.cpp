@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 
 using namespace std;
 
@@ -65,7 +66,7 @@ void clinic::reception_menu() {
   system("cls");
   switch(reception_choice) {
     case 1:
-      // edit_file();
+      clinic::edit_file();
       break;
     case 2:
       clinic::write_to_file();
@@ -93,8 +94,7 @@ void clinic::write_to_file(){
   ifstream ifile("clinic records.xls");
 
   // Count the number of lines in the file which is the number 
-  // of currently exisitng patient records. New patients are assigned 
-  // ID numbers based on this number.
+  // of currently exisitng patient records.
   int count = 0;
   string line;
   while(getline(ifile, line)){
@@ -132,6 +132,22 @@ void clinic::write_to_file(){
 
  ofile.close();
 }
+
+void clinic::edit_file(){
+  ifstream ifile("clinic records.xls");
+  while(ifile >> first_name >> last_name >> gender >> age >> id_number >> insurance >> status){
+
+    string  id = to_string(id_number);
+    string dataj[][6] = { {id}, {first_name, last_name, gender, age, insurance, status} };
+    for(int i = 0; i < 4; i ++){
+    for(int j = 0; j < 6; j ++){
+      cout << dataj[i][j] << " ";
+    }
+  }
+  cout << endl;
+  }
+  }  
+
 
 void clinic::display_records(){
   // Displays all the patient details stored in the file.
