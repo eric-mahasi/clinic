@@ -21,6 +21,7 @@ public:
   void display_records();
   void get_report();
   void view_apps();
+  void edit_file();
 };
 
 void clinic::main_menu(){
