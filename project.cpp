@@ -90,41 +90,37 @@ void clinic::write_to_file(){
   // Stores the patient details to the file.
   int number;
   ofstream ofile("clinic records.xls", ios::app);
-  cout << "How many records would you like to add? ";
-  cin >> number;
 
- for(int n = 0;n < number;n ++){
+  cout << "Enter First Name: ";
+  cin >> first_name;
+  first_name[0] = toupper(first_name[0]);
 
-   cout << "Enter First Name: ";
-   cin >> first_name;
-   first_name[0] = toupper(first_name[0]);
+  cout << "Enter Last Name: ";
+  cin >> last_name;
+  last_name[0] = toupper(last_name[0]);
 
-   cout << "Enter Last Name: ";
-   cin >> last_name;
-   last_name[0] = toupper(last_name[0]);
+  cout << "Enter Gender(M/F): ";
+  cin >> gender;
+  gender[0] = toupper(gender[0]);
 
-   cout << "Enter Gender(M/F): ";
-   cin >> gender;
-   gender[0] = toupper(gender[0]);
+  cout << "Enter Age: ";
+  cin >> age;
 
-   cout << "Enter Age: ";
-   cin >> age;
+  cout << "Enter ID Number: ";
+  cin >> id_number;
 
-   cout << "Enter ID Number: ";
-   cin >> id_number;
+  cout << "Enter Insurance Company: ";
+  cin >> insurance;
+  insurance[0] = toupper(insurance[0]);
 
-   cout << "Enter Insurance Company: ";
-   cin >> insurance;
-   insurance[0] = toupper(insurance[0]);
+  cout << "Enter Status(Routine/Urgent): ";
+  cin >> status;
+  status[0] = toupper(status[0]);
 
-   cout << "Enter Status(Routine/Urgent): ";
-   cin >> status;
-   status[0] = toupper(status[0]);
+  system("cls");
+  ofile << first_name << "\t" << last_name << "\t" << gender << "\t" << age <<
+  "\t" << id_number << "\t" << insurance << "\t" << status << endl;
 
-   system("cls");
-   ofile << first_name << "\t" << last_name << "\t" << gender << "\t" << age <<
-   "\t" << id_number << "\t" << insurance << "\t" << status << endl;
- }
  ofile.close();
 }
 
