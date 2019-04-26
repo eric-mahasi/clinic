@@ -9,8 +9,8 @@ private:
   // Used to determine which option is chosen from a list of menu items.
   int doctor_choice, reception_choice;
 	string first_name, last_name, gender, age, id_number, insurance, status,
-  app_date;
   // app_date is short for appointment date
+  app_date;
 
 public:
   int choice;
@@ -49,81 +49,86 @@ void clinic:: doctor_menu(){
     case 3:
       exit(0);
       break;
+    default:
+      cout << "Invalid choice. Please try again. \n";
+      break;
   }
 }
 
 void clinic::reception_menu() {
-  cout << "1-----Edit patient details\n"
-       << "2-----Enter new patient details\n"
-       << "3-----Generate report\n"
-       << "4-----View all records\n"
-       << "5-----Go back to main menu\n"
-       << "6-----Quit\n";
+  cout << "1-----Enter new patient details\n"
+       << "2-----Generate report\n"
+       << "3-----View all records\n"
+       << "4-----Go back to main menu\n"
+       << "5-----Quit\n";
 
   cin >> reception_choice;
   system("cls");
   switch(reception_choice) {
     case 1:
-      // edit_file();
-      break;
-    case 2:
       clinic::write_to_file();
       break;
-    case 3:
+    case 2:
       clinic::get_report();
       break;
-    case 4:
+    case 3:
       clinic::display_records();
       break;
-    case 5:
+    case 4:
       clinic::main_menu();
       break;
-    case 6:
+    case 5:
       exit(0);
       break;
-
+    default:
+      cout << "Invalid choice. Please try again. \n";
+      break;
   }
 }
 
 void clinic::write_to_file(){
   // Stores the patient details to the file.
-  int number;
   ofstream ofile("clinic records.xls", ios::app);
-  cout << "How many records would you like to add? ";
-  cin >> number;
+  ifstream ifile("clinic records.xls");
 
- for(int n = 0;n < number;n ++){
+  // Count the number of lines in the file which is the number 
+  // of currently exisitng patient records.
+  int count = 0;
+  string line;
+  while(getline(ifile, line)){
+    count ++;
+  }
+  // New patient id is calculated based on the number of previously 
+  // existing accounts.
+  id_number = count + 1;
 
-   cout << "Enter First Name: ";
-   cin >> first_name;
-   first_name[0] = toupper(first_name[0]);
+  cout << "Enter First Name: ";
+  cin >> first_name;
+  first_name[0] = toupper(first_name[0]);
 
-   cout << "Enter Last Name: ";
-   cin >> last_name;
-   last_name[0] = toupper(last_name[0]);
+  cout << "Enter Last Name: ";
+  cin >> last_name;
+  last_name[0] = toupper(last_name[0]);
 
-   cout << "Enter Gender(M/F): ";
-   cin >> gender;
-   gender[0] = toupper(gender[0]);
+  cout << "Enter Gender(M/F): ";
+  cin >> gender;
+  gender[0] = toupper(gender[0]);
 
-   cout << "Enter Age: ";
-   cin >> age;
+  cout << "Enter Age: ";
+  cin >> age;
 
-   cout << "Enter ID Number: ";
-   cin >> id_number;
+  cout << "Enter Insurance Company: ";
+  cin >> insurance;
+  insurance[0] = toupper(insurance[0]);
 
-   cout << "Enter Insurance Company: ";
-   cin >> insurance;
-   insurance[0] = toupper(insurance[0]);
+  cout << "Enter Status(Routine/Urgent): ";
+  cin >> status;
+  status[0] = toupper(status[0]);
 
-   cout << "Enter Status(Routine/Urgent): ";
-   cin >> status;
-   status[0] = toupper(status[0]);
+  system("cls");
+  ofile << first_name << "\t" << last_name << "\t" << gender << "\t" << age <<
+  "\t" << id_number << "\t" << insurance << "\t" << status << endl;
 
-   system("cls");
-   ofile << first_name << "\t" << last_name << "\t" << gender << "\t" << age <<
-   "\t" << id_number << "\t" << insurance << "\t" << status << endl;
- }
  ofile.close();
 }
 
@@ -134,7 +139,8 @@ void clinic::display_records(){
   "\t\tInsurance \t\tStatus \n";
 
   cout << title;
-  while(ifile >> first_name >> last_name >> gender >> age >> id_number >> insurance >> status){
+  while(ifile >> first_name >> last_name >> gender >> age >> id_number >> 
+  insurance >> status){
     cout << first_name << "\t\t" << last_name << "\t\t\t" << gender << "\t\t"
     << age << "\t\t" << id_number << "\t\t\t" << insurance << "\t\t\t" <<
     status;
@@ -148,7 +154,8 @@ void clinic::get_report(){
   ifstream ifile("clinic records.xls");
   ofstream ofile("appointments.xls", ios::app);
 
-  while(ifile >> first_name >> last_name >> gender >> age >> id_number >> insurance >> status){
+  while(ifile >> first_name >> last_name >> gender >> age >> id_number >> 
+  insurance >> status){
     if(status == "Urgent"){
       app_date = "Today";
       ofile << first_name << "\t" << last_name << "\t" << gender << "\t" << age
@@ -170,10 +177,11 @@ void clinic::view_apps(){
   "\t\tInsurance \t\tAppointment Date\n";
 
   cout << title;
-  while (ifile >> first_name >> last_name >> gender >> age >> id_number >> insurance >> app_date){
-    cout << first_name << "\t\t" << last_name << "\t\t\t" << gender << "\t\t" <<
-     age << "\t\t" << id_number << "\t\t\t" << insurance << "\t\t\t" << app_date
-      << endl;
+  while (ifile >> first_name >> last_name >> gender >> age >> id_number >> 
+  insurance >> app_date){
+    cout << first_name << "\t\t" << last_name << "\t\t\t" << gender << "\t\t" 
+    << age << "\t\t" << id_number << "\t\t\t" << insurance << "\t\t\t" << 
+    app_date << endl;
   }
   ifile.close();
 }
@@ -196,7 +204,7 @@ int main(){
         exit(0);
         break;
       default:
-        cout << "Invalid choice. Try again \n";
+        cout << "Invalid choice. Please try again \n";
         break;
     }
   }
