@@ -133,7 +133,8 @@ void clinic::display_records(){
   "\t\tInsurance \t\tStatus \n";
 
   cout << title;
-  while(ifile >> first_name >> last_name >> gender >> age >> id_number >> insurance >> status){
+  while(ifile >> first_name >> last_name >> gender >> age >> id_number >> 
+  insurance >> status){
     cout << first_name << "\t\t" << last_name << "\t\t\t" << gender << "\t\t"
     << age << "\t\t" << id_number << "\t\t\t" << insurance << "\t\t\t" <<
     status;
@@ -147,7 +148,8 @@ void clinic::get_report(){
   ifstream ifile("clinic records.xls");
   ofstream ofile("appointments.xls", ios::app);
 
-  while(ifile >> first_name >> last_name >> gender >> age >> id_number >> insurance >> status){
+  while(ifile >> first_name >> last_name >> gender >> age >> id_number >> 
+  insurance >> status){
     if(status == "Urgent"){
       app_date = "Today";
       ofile << first_name << "\t" << last_name << "\t" << gender << "\t" << age
@@ -169,10 +171,11 @@ void clinic::view_apps(){
   "\t\tInsurance \t\tAppointment Date\n";
 
   cout << title;
-  while (ifile >> first_name >> last_name >> gender >> age >> id_number >> insurance >> app_date){
-    cout << first_name << "\t\t" << last_name << "\t\t\t" << gender << "\t\t" <<
-     age << "\t\t" << id_number << "\t\t\t" << insurance << "\t\t\t" << app_date
-      << endl;
+  while (ifile >> first_name >> last_name >> gender >> age >> id_number >> 
+  insurance >> app_date){
+    cout << first_name << "\t\t" << last_name << "\t\t\t" << gender << "\t\t" 
+    << age << "\t\t" << id_number << "\t\t\t" << insurance << "\t\t\t" << 
+    app_date << endl;
   }
   ifile.close();
 }
