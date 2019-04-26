@@ -7,8 +7,8 @@ class clinic{
 
 private:
   // Used to determine which option is chosen from a list of menu items.
-  int doctor_choice, reception_choice, id_number;
-	string first_name, last_name, gender, age, insurance, status,
+  int doctor_choice, reception_choice;
+	string first_name, last_name, gender, age, id_number, insurance, status,
   app_date;
   // app_date is short for appointment date
 
