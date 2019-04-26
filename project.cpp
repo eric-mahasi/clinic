@@ -22,7 +22,6 @@ public:
   void display_records();
   void get_report();
   void view_apps();
-  void edit_file();
 };
 
 void clinic::main_menu(){
@@ -66,7 +65,6 @@ void clinic::reception_menu() {
   system("cls");
   switch(reception_choice) {
     case 1:
-      clinic::edit_file();
       break;
     case 2:
       clinic::write_to_file();
@@ -132,22 +130,6 @@ void clinic::write_to_file(){
 
  ofile.close();
 }
-
-void clinic::edit_file(){
-  ifstream ifile("clinic records.xls");
-  while(ifile >> first_name >> last_name >> gender >> age >> id_number >> insurance >> status){
-
-    string  id = to_string(id_number);
-    string dataj[][6] = { {id}, {first_name, last_name, gender, age, insurance, status} };
-    for(int i = 0; i < 4; i ++){
-    for(int j = 0; j < 6; j ++){
-      cout << dataj[i][j] << " ";
-    }
-  }
-  cout << endl;
-  }
-  }  
-
 
 void clinic::display_records(){
   // Displays all the patient details stored in the file.
