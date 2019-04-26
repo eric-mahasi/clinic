@@ -54,31 +54,28 @@ void clinic:: doctor_menu(){
 }
 
 void clinic::reception_menu() {
-  cout << "1-----Edit patient details\n"
-       << "2-----Enter new patient details\n"
-       << "3-----Generate report\n"
-       << "4-----View all records\n"
-       << "5-----Go back to main menu\n"
-       << "6-----Quit\n";
+  cout << "1-----Enter new patient details\n"
+       << "2-----Generate report\n"
+       << "3-----View all records\n"
+       << "4-----Go back to main menu\n"
+       << "5-----Quit\n";
 
   cin >> reception_choice;
   system("cls");
   switch(reception_choice) {
     case 1:
-      break;
-    case 2:
       clinic::write_to_file();
       break;
-    case 3:
+    case 2:
       clinic::get_report();
       break;
-    case 4:
+    case 3:
       clinic::display_records();
       break;
-    case 5:
+    case 4:
       clinic::main_menu();
       break;
-    case 6:
+    case 5:
       exit(0);
       break;
 
