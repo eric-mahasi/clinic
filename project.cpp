@@ -50,7 +50,11 @@ void clinic:: doctor_menu(){
       exit(0);
       break;
     default:
-      cout << "Invalid choice. Please try again. \n";
+      if(cin.fail()){
+          cout << "Invalid choice. Please try again. \n";
+          cin.clear();
+          cin.ignore();
+        }
       clinic::doctor_menu();
       break;
   }
@@ -82,7 +86,11 @@ void clinic::reception_menu() {
       exit(0);
       break;
     default:
-      cout << "Invalid choice. Please try again. \n";
+      if(cin.fail()){
+          cout << "Invalid choice. Please try again. \n";
+          cin.clear();
+          cin.ignore();
+        }
       clinic::reception_menu();
       break;
   }
@@ -206,7 +214,11 @@ int main(){
         exit(0);
         break;
       default:
-        cout << "Invalid choice. Please try again \n";
+        if(cin.fail()){
+          cout << "Invalid choice. Please try again. \n";
+          cin.clear();
+          cin.ignore();
+        }
         break;
     }
   }
