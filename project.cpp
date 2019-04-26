@@ -51,6 +51,7 @@ void clinic:: doctor_menu(){
       break;
     default:
       cout << "Invalid choice. Please try again. \n";
+      clinic::doctor_menu();
       break;
   }
 }
@@ -82,6 +83,7 @@ void clinic::reception_menu() {
       break;
     default:
       cout << "Invalid choice. Please try again. \n";
+      clinic::reception_menu();
       break;
   }
 }
