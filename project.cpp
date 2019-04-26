@@ -82,7 +82,6 @@ void clinic::reception_menu() {
 
 void clinic::write_to_file(){
   // Stores the patient details to the file.
-  int number;
   ofstream ofile("clinic records.xls", ios::app);
   ifstream ifile("clinic records.xls");
 
