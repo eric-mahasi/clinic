@@ -3,7 +3,7 @@ A Management Information System (MIS) that is used to keep track of
 patient details at a clinic.
 
 # Task
-The assignment required us to create a C ++ program that uses functions
+The assignment required us to create a C++ program that uses functions
 and can read and write to files.
 
 # Features
@@ -18,13 +18,13 @@ To get a copy of this project onto your local machine, simply click the
 *clone* button at the top of the page and follow the prompts.
 
 ## Prerequisites
-Windows users need to install a compiler for C ++ for this project to
+Windows users need to install a compiler for C++ for this project to
 run. Cygwin is a trusted compiler and can be downloaded
 [here](https://www.cygwin.com/setup-x86_64.exe). Installation
 instructions provide a guide for [setting up](https://cygwin.com/)
 Cygwin. 
 
-Linux users do not need to install a C ++ compiler since one
+Linux users do not need to install a C++ compiler since one
 comes pre-installed. 
 
 # Usage
